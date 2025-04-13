@@ -1,3 +1,4 @@
 export const SCREENS = {
- HOME: "Home"
-};
+ HOME: "Home",
+ SPLASH: "Splash"
+} as const;
