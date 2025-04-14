@@ -1,5 +1,4 @@
 import { View, Text } from "react-native";
-import { Image } from "react-native";
 import style from "./header-style";
 import PokeBall from "../../../assets/svg/pokeball";
 

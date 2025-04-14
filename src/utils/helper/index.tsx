@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Platform } from "react-native";
 
 import {
@@ -11,8 +12,5 @@ const isIOS = () => {
 const wp = (percent: number) => widthPercentageToDP(percent);
 const hp = (percent: number) => heightPercentageToDP(percent);
 
-export  {
-  isIOS,
-  wp,
-  hp,
-};
+
+export { isIOS, wp, hp };

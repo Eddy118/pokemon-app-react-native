@@ -10,8 +10,7 @@ const HomeScreen = () => {
   const [pokemons, setPokemons] = useState<PokemonType[]>([]);
 
   const fetchPokemonListing = async () => {
-    const { data } = await getPokemonListing();
-    const { results } = data as any;
+    const results = await getPokemonListing();
     setPokemons(results);
   };
 

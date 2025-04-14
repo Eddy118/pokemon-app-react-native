@@ -1,8 +1,9 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { FlashList } from "@shopify/flash-list";
-import { wp } from "../../../utils/helper";
 import { PokemonType } from "../../../shared/types/types";
 import { useCallback } from "react";
+import PokemonListingCard from "../PokemonCard";
+import Styles from "./ListingStyles";
 
 interface CustomListingWrapperProps {
   data: PokemonType[];
@@ -11,22 +12,28 @@ interface CustomListingWrapperProps {
 interface RednerListingProps {
   name: string;
   url: string;
+  imageUrl: string;
+  abilities: string[];
 }
 
 const CustomListingWrapper = ({ data }: CustomListingWrapperProps) => {
   const renderLisitng = useCallback(({ ...props }: RednerListingProps) => {
     return (
-      <View>
-        <Text>{props.name}</Text>
+      <View style={Styles.listContentStyles}>
+        <PokemonListingCard {...props} />
       </View>
     );
   }, []);
   return (
-    <View style={{ flex: 1, width: wp(100) }}>
+    <View style={Styles.container}>
       <FlashList
+        keyExtractor={(item) => item.name}
         data={data}
         renderItem={({ item }) => renderLisitng(item)}
         estimatedItemSize={200}
+        style={Styles.listStyles}
+        ItemSeparatorComponent={() => <View style={Styles.itemSeperator} />}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
