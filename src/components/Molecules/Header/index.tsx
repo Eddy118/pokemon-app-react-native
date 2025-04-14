@@ -1,6 +1,7 @@
-import { View, Text } from "react-native";
+import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
 import style from "./header-style";
 import PokeBall from "../../../assets/svg/pokeball";
+import { useNavigation } from "@react-navigation/native";
 
 type headerProps = {
   title: string;
@@ -8,9 +9,19 @@ type headerProps = {
 };
 
 const Header = ({ title, showBackButton = false }: headerProps) => {
+  const navigation = useNavigation();
   return (
     <View style={style.container}>
-      {showBackButton ? "" : <PokeBall />}
+      {showBackButton ? (
+        <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <Image
+            style={style.backBtn}
+            source={require("../../../assets/images/back.png")}
+          />
+        </TouchableWithoutFeedback>
+      ) : (
+        <PokeBall />
+      )}
       <Text style={style.title}>{title}</Text>
     </View>
   );

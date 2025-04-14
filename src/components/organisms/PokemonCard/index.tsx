@@ -4,6 +4,8 @@ import Label from "../../Atoms/label";
 import Tag from "../../Atoms/tag";
 import colors from "../../../theme/colors";
 import Styles from "./PokemonCardStyles";
+import { useNavigation } from "@react-navigation/native";
+import { SCREENS } from "../../../constants";
 
 type PokemonListingCardProps = {
   name: string;
@@ -14,6 +16,13 @@ type PokemonListingCardProps = {
 };
 
 const PokemonListingCard = ({ ...props }: PokemonListingCardProps) => {
+  const navigation = useNavigation();
+
+  const naviagteToDetails = (name: string) => {
+    navigation.navigate(SCREENS.pokemondetails, {
+      name,
+    });
+  };
   return (
     <View style={Styles.container}>
       <Shadow style={Styles.cardShadow}>
@@ -31,10 +40,13 @@ const PokemonListingCard = ({ ...props }: PokemonListingCardProps) => {
             </View>
           </View>
           <View style={Styles.detailsBtn}>
-            <TouchableOpacity style={Styles.detailsBtnContainer}>
+            <TouchableOpacity
+              style={Styles.detailsBtnContainer}
+              onPress={() => naviagteToDetails(props?.name)}
+            >
               <Image
                 source={require("../../../assets/images/right-arrow.png")}
-                tintColor={"#ffff"}
+                tintColor={colors.white}
                 resizeMode="contain"
                 style={Styles.arrowStyle}
               />

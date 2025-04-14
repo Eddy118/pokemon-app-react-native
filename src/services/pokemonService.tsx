@@ -1,8 +1,17 @@
 import apiClient from "../api/apiClient";
 import { PokemonType } from "../shared/types/types";
 
-export const getPokemonListing = async () => {
-  const { data } = await apiClient.get("pokemon");
+type getPokemonListingProps = {
+  page: number;
+  pageSize: number;
+};
+export const getPokemonListing = async ({
+  page,
+  pageSize,
+}: getPokemonListingProps) => {
+  const { data } = await apiClient.get(
+    `pokemon?offset=${(page - 1) * pageSize}&limit=${pageSize}`
+  );
 
   const { results } = data as any;
 
@@ -16,10 +25,14 @@ export const getPokemonListing = async () => {
         ...pokemon,
         imageUrl: data?.sprites?.other?.["official-artwork"]?.front_default,
         imageUrlSvg: data?.sprites?.other?.dream_world?.front_default,
-        abilities:
-          data?.abilities?.map(({ability}) => ability?.name) ?? [],
+        abilities: data?.abilities?.map(({ ability }) => ability?.name) ?? [],
       };
     })
   );
   return resultsList;
+};
+
+export const getPokemonDetails = async (name: string) => {
+  const { data } = await apiClient.get(`pokemon/${name}`);
+  return data;
 };

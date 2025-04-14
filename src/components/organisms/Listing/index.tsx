@@ -7,16 +7,18 @@ import Styles from "./ListingStyles";
 
 interface CustomListingWrapperProps {
   data: PokemonType[];
+  onReachEnd: () => void;
 }
-
 interface RednerListingProps {
   name: string;
   url: string;
   imageUrl: string;
   abilities: string[];
+  
 }
 
-const CustomListingWrapper = ({ data }: CustomListingWrapperProps) => {
+const CustomListingWrapper = ({ data, onReachEnd }: CustomListingWrapperProps) => {
+
   const renderLisitng = useCallback(({ ...props }: RednerListingProps) => {
     return (
       <View style={Styles.listContentStyles}>
@@ -34,6 +36,8 @@ const CustomListingWrapper = ({ data }: CustomListingWrapperProps) => {
         style={Styles.listStyles}
         ItemSeparatorComponent={() => <View style={Styles.itemSeperator} />}
         showsVerticalScrollIndicator={false}
+        onEndReached={() => onReachEnd()}
+        onEndReachedThreshold={0.6}
       />
     </View>
   );

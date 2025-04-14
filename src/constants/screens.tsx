@@ -1,4 +1,5 @@
 export const SCREENS = {
  HOME: "Home",
- SPLASH: "Splash"
+ SPLASH: "Splash",
+ pokemondetails: "Pokemon-Details"
 } as const;

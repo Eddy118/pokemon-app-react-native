@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../theme/colors";
-import { wp } from "../../../utils/helper";
+import { hp, wp } from "../../../utils/helper";
 import fonts from "../../../theme/fonts";
 
 const tagStyles = StyleSheet.create({
@@ -12,6 +12,7 @@ const tagStyles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginLeft: wp(1),
+    marginTop : hp(0.5)
   },
   title: {
     paddingHorizontal: wp(1),

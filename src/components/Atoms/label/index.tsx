@@ -1,5 +1,4 @@
 import { Text, View, StyleProp } from "react-native";
-import LabelStyle from "./LableStyle";
 
 type LabeProps = {
   title: string;
@@ -9,7 +8,7 @@ type LabeProps = {
 const Label = ({ title, styles }: LabeProps) => {
   return (
     <View>
-      <Text style={[styles, LabelStyle.label]}>{title}</Text>
+      <Text style={[styles]}>{title}</Text>
     </View>
   );
 };

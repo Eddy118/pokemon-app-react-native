@@ -16,8 +16,10 @@ const AppContainer = ({ children }: AppContainerProps) => {
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
+        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20} // adjust as needed
       >
-        {children}
+      
+          {children}
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
