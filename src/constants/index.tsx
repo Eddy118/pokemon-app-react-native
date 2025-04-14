@@ -1,5 +1,4 @@
 import { SCREENS } from "./screens";
+import { baseURl } from "./environment";
 
-export  {
-  SCREENS
-};
+export { SCREENS, baseURl };

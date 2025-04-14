@@ -1,6 +1,6 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
-import { KeyboardAvoidingView, Platform, Text } from "react-native";
+import { KeyboardAvoidingView, Platform } from "react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
