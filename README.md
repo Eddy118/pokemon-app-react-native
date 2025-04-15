@@ -1,6 +1,31 @@
-# Pokemon
 
-The Pokémon App is a mobile application built using React Native that allows users to browse, search, and view detailed information about Pokémon. It integrates with the public PokéAPI (https://pokeapi.co/api/v2/) to fetch real-time Pokémon data including names, types, stats, abilities, and images. The app is designed to be responsive, user-friendly, and visually engaging for Pokémon fans and developers alike.
+# 🧬 Pokemon App
+
+A cross-platform mobile app built using **React Native** that provides a beautiful and responsive interface to explore Pokemon data. This project integrates smooth navigation, animations, chart visualizations, and modern UI design practices.
+
+---
+
+## Screenshots
+
+### Andoird Screenshots: 
+
+- https://drive.google.com/file/d/14NJafvC2UYKk9d4X2hVusFZChH6mEy5N/view?usp=sharing
+
+- https://drive.google.com/file/d/1m9XlEglo1Al8wsVnnwyC8efTNi-YqQ8N/view?usp=sharing
+
+### IOS Screenshots: 
+
+- https://drive.google.com/file/d/1YfGb1MHOIVZfJRWTywS9xZ_hkE7kNBAa/view?usp=sharing
+
+- https://drive.google.com/file/d/12edEPlcUCseP76mO-VdwuNdoplUm6adQ/view?usp=sharing
+
+
+### Demo
+
+- https://drive.google.com/file/d/1xAQk0sQDI4ackQ4I1Ue0d8XRaNKMRnZ9/view?usp=sharing
+
+- https://drive.google.com/file/d/1vNKkLD6N51_XkWwzXxkIPnAC-qs46N-Z/view?usp=sharing
+
 
 ## Documentation
 
@@ -9,71 +34,155 @@ The Pokémon App is a mobile application built using React Native that allows us
 [React Native Documentation](https://reactnative.dev/docs/getting-started)
 
 
-## Features
+## 🚀 Getting Started
 
-- Pokemon Listing
-- Pokemon Details 
+### Prerequisites
 
+- Node.js >= 18
+- Yarn or NPM
+- Android Studio or Xcode (depending on platform)
 
-Andoird Screenshots: https://drive.google.com/file/d/14NJafvC2UYKk9d4X2hVusFZChH6mEy5N/view?usp=sharing
+### Installation
 
-https://drive.google.com/file/d/1m9XlEglo1Al8wsVnnwyC8efTNi-YqQ8N/view?usp=sharing
-
-IOS Screenshots: https://drive.google.com/file/d/1YfGb1MHOIVZfJRWTywS9xZ_hkE7kNBAa/view?usp=sharing
-
-https://drive.google.com/file/d/12edEPlcUCseP76mO-VdwuNdoplUm6adQ/view?usp=sharing
-## Demo
-
-Android: https://drive.google.com/file/d/1xAQk0sQDI4ackQ4I1Ue0d8XRaNKMRnZ9/view?usp=sharing
-
-IOS: https://drive.google.com/file/d/1vNKkLD6N51_XkWwzXxkIPnAC-qs46N-Z/view?usp=sharing
-## Installation
-
-
-# Getting Started
-
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
-
-## Step 1: Start Metro
-
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```bash
+git clone https://github.com/your-username/pokemon-app.git
+cd pokemon-app
+npm install
 ```
 
-## Step 2: Build and run your app
+### Running the App
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+For Android:
 
-### Android
-
-```sh
-# Using npm
+```bash
 npm run android
-
-# OR using Yarn
-yarn android
 ```
 
-### iOS
+For iOS:
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-# Using npm
+```bash
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see Pokemon app running in the Android Emulator, iOS Simulator, or your connected device.
+To start the Metro bundler:
+
+```bash
+npm run start
+```
+
+### Linting
+
+```bash
+npm run lint
+```
+
+### Running Tests
+
+```bash
+npm test
+```
+
+---
+
+## 🧩 Third-Party Packages Used
+
+### 📱 Core Libraries
+
+- [React](https://reactjs.org/)
+- [React Native](https://reactnative.dev/)
+- [React Redux](https://react-redux.js.org/)
+- [@reduxjs/toolkit](https://redux-toolkit.js.org/)
+
+### 🔀 Navigation
+
+- [@react-navigation/native](https://reactnavigation.org/)
+- [@react-navigation/native-stack](https://reactnavigation.org/docs/native-stack-navigator/)
+- [@react-navigation/elements](https://reactnavigation.org/docs/elements/)
+- [@react-native-masked-view/masked-view](https://github.com/react-native-masked-view/masked-view)
+
+### 📊 UI & Animations
+
+- [Lottie React Native](https://github.com/lottie-react-native/lottie-react-native)
+- [React Native Linear Gradient](https://github.com/react-native-linear-gradient/react-native-linear-gradient)
+- [React Native Shadow 2](https://github.com/SrBrahma/react-native-shadow-2)
+- [React Native Skeleton Placeholder](https://github.com/chramos/react-native-skeleton-placeholder)
+- [React Native Chart Kit](https://github.com/indiespirit/react-native-chart-kit)
+- [React Native Render HTML](https://github.com/meliorence/react-native-render-html)
+- [React Native SVG](https://github.com/software-mansion/react-native-svg)
+
+### 📐 Responsiveness
+
+- [React Native Responsive Fontsize](https://github.com/heyman333/react-native-responsive-fontSize)
+- [React Native Responsive Screen](https://github.com/marudy/react-native-responsive-screen)
+- [React Native Safe Area Context](https://github.com/th3rdwave/react-native-safe-area-context)
+- [React Native Screens](https://github.com/software-mansion/react-native-screens)
+
+### 📦 Lists & Performance
+
+- [@shopify/flash-list](https://github.com/Shopify/flash-list)
+
+### 🌐 Networking
+
+- [Axios](https://axios-http.com/)
+
+### 🧪 Development & Tooling
+
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Husky](https://typicode.github.io/husky/)
+- [Jest](https://jestjs.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+---
+
+## 🛠 Project Structure
+
+The project follows a modular, scalable folder structure with clear separation of concerns:
+
+```bash
+src/
+├── api/                         # API call setups
+├── assets/                      # Static assets
+│   ├── animations/
+│   ├── fonts/
+│   ├── images/
+│   └── svg/
+├── components/                  # Reusable UI components (Atomic Design)
+│   ├── Atoms/
+│   ├── Molecules/
+│   └── Organisms/
+├── constants/                   # Constant values and enums
+│   ├── environment.tsx
+│   ├── index.tsx
+│   └── screens.tsx
+├── navigation/                  # App navigation stack
+│   └── index.tsx
+├── screens/                     # App screens (feature-based)
+│   ├── Home/
+│   ├── Pokemon-Details/
+│   └── Splash/
+├── services/                    # Network and business logic
+│   └── pokemonService.tsx
+├── shared/types/               # Global TypeScript types
+│   └── types.ts
+├── store/                       # Redux store, slices, and related logic
+├── theme/                       # App-wide themes
+│   ├── colors/
+│   └── fonts/
+└── utils/helper/                # Utility functions and helpers
+```
+
+---
+
+## 🧪 Testing & Quality
+
+- Code is linted with ESLint and formatted with Prettier.
+- Pre-commit hooks are enforced via Husky.
+- Tests are written using Jest.
+
+---
+
+
+## 👨‍💻 Author
+
+GitHub: [@Eddy118](https://github.com/Eddy118)
