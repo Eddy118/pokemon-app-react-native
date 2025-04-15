@@ -7,8 +7,9 @@ import { getPokemonListing } from "../../services/pokemonService";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { AppDispatch } from "../../store/store";
 import { updatePokemonList } from "../../store/pokemon.slice";
+import Styles from "./HomeStyles";
+import { pageSize } from "../../constants/environment";
 
-const pageSize = 30;
 const HomeScreen = () => {
   const [page, setPage] = useState<number>(1);
   const pokemons = useAppSelector((state) => state.pokemon.pokemoms);
@@ -27,9 +28,7 @@ const HomeScreen = () => {
   return (
     <>
       <AppContainer>
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
+        <View style={Styles.container}>
           <Header title="Gotta Catch 'Em All" />
           <CustomListingWrapper
             data={pokemons}
