@@ -1,7 +1,8 @@
-import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
+import { View, Image, TouchableWithoutFeedback } from "react-native";
 import style from "./header-style";
 import PokeBall from "../../../assets/svg/pokeball";
 import { useNavigation } from "@react-navigation/native";
+import Label from "../../Atoms/label";
 
 type headerProps = {
   title: string;
@@ -22,7 +23,7 @@ const Header = ({ title, showBackButton = false }: headerProps) => {
       ) : (
         <PokeBall />
       )}
-      <Text style={style.title}>{title}</Text>
+      <Label styles={style.title} title={title} />
     </View>
   );
 };
