@@ -45,7 +45,7 @@ A cross-platform mobile app built using **React Native** that provides a beautif
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/pokemon-app.git
+git clone https://github.com/Eddy118/pokemon-app-react-native.git
 cd pokemon-app
 npm install
 ```
