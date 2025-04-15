@@ -9,6 +9,7 @@ import { AppDispatch } from "../../store/store";
 import { updatePokemonList } from "../../store/pokemon.slice";
 import Styles from "./HomeStyles";
 import { pageSize } from "../../constants/environment";
+import SkelonPlaceholder from "../../components/Molecules/listSkeleton";
 
 const HomeScreen = () => {
   const [page, setPage] = useState<number>(1);
@@ -30,10 +31,15 @@ const HomeScreen = () => {
       <AppContainer>
         <View style={Styles.container}>
           <Header title="Gotta Catch 'Em All" />
-          <CustomListingWrapper
-            data={pokemons}
-            onReachEnd={() => setPage(page + 1)}
-          />
+
+          {pokemons?.length ? (
+            <CustomListingWrapper
+              data={pokemons}
+              onReachEnd={() => setPage(page + 1)}
+            />
+          ) : (
+            <SkelonPlaceholder />
+          )}
         </View>
       </AppContainer>
     </>

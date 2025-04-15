@@ -11,7 +11,7 @@ const Splash = () => {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate(SCREENS.HOME);
-    }, 5800);
+    }, 5500);
   }, []);
   return (
     <AppContainer>

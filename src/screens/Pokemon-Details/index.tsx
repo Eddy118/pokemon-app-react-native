@@ -6,6 +6,7 @@ import apiClient from "../../api/apiClient";
 import PokemonDetailsCard from "../../components/organisms/PokemonDetailsCard";
 import BackgroundCard from "../../components/Molecules/BackgroundCard";
 import ScrollViewWrapper from "../../components/organisms/ScrollViewWrapper";
+import SkelonPlaceholder from "../../components/Molecules/listSkeleton";
 
 const PokemonDetails = ({ route }) => {
   const [pokemon, setPokemons] = useState<any>({});
@@ -49,13 +50,12 @@ const PokemonDetails = ({ route }) => {
     <AppContainer>
       <Header showBackButton={true} title={name?.toUpperCase()} />
 
-      <ScrollViewWrapper>
-        <BackgroundCard
-          background={backgroundImage}
-          profile={backgroundImage}
-        />
-
-        {pokemon && (
+      {pokemon && names ? (
+        <ScrollViewWrapper>
+          <BackgroundCard
+            background={backgroundImage}
+            profile={backgroundImage}
+          />
           <PokemonDetailsCard
             abilities={abilities}
             species={species}
@@ -66,8 +66,10 @@ const PokemonDetails = ({ route }) => {
             weight={pokemon?.weight}
             stats={stats}
           />
-        )}
-      </ScrollViewWrapper>
+        </ScrollViewWrapper>
+      ) : (
+        <SkelonPlaceholder />
+      )}
     </AppContainer>
   );
 };
