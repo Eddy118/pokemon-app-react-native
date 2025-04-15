@@ -23,9 +23,11 @@ const PokemonListingCard = ({ ...props }: PokemonListingCardProps) => {
       name,
     });
   };
+
   return (
     <View style={Styles.container}>
       <Shadow style={Styles.cardShadow}>
+
         <Image style={Styles.pokemonImage} source={{ uri: props.imageUrl }} />
         <View style={{ flexDirection: "row" }}>
           <View style={{ backgroundColor: colors.cardBackground }}>
@@ -35,7 +37,7 @@ const PokemonListingCard = ({ ...props }: PokemonListingCardProps) => {
             />
             <View style={Styles.tagContainer}>
               {props?.abilities?.map((ability: string) => {
-                return <Tag title={ability} />;
+                return <Tag key={ability} title={ability} />;
               })}
             </View>
           </View>

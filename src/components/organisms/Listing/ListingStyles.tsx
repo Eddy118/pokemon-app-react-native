@@ -19,5 +19,8 @@ const ListingStyles = StyleSheet.create({
   itemSeperator: {
     height: hp(1),
   },
+  listFooter: {
+    marginTop: hp(1),
+  },
 });
 export default ListingStyles;

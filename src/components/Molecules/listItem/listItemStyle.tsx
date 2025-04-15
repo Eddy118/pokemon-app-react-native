@@ -18,7 +18,7 @@ const listItemStyles = StyleSheet.create({
   },
   label: {
     fontFamily: fonts.Lato.bold,
-    fontSize: RFValue(15),
+    fontSize: RFValue(13),
   },
 });
 export default listItemStyles;

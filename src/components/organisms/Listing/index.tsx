@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, ActivityIndicator } from "react-native";
 import { FlashList } from "@shopify/flash-list";
 import { PokemonType } from "../../../shared/types/types";
 import { useCallback } from "react";
@@ -14,11 +14,12 @@ interface RednerListingProps {
   url: string;
   imageUrl: string;
   abilities: string[];
-  
 }
 
-const CustomListingWrapper = ({ data, onReachEnd }: CustomListingWrapperProps) => {
-
+const CustomListingWrapper = ({
+  data,
+  onReachEnd,
+}: CustomListingWrapperProps) => {
   const renderLisitng = useCallback(({ ...props }: RednerListingProps) => {
     return (
       <View style={Styles.listContentStyles}>
@@ -37,7 +38,9 @@ const CustomListingWrapper = ({ data, onReachEnd }: CustomListingWrapperProps) =
         ItemSeparatorComponent={() => <View style={Styles.itemSeperator} />}
         showsVerticalScrollIndicator={false}
         onEndReached={() => onReachEnd()}
-        onEndReachedThreshold={0.6}
+        onEndReachedThreshold={0.7}
+        ListFooterComponent={() => <ActivityIndicator />}
+        ListFooterComponentStyle={Styles.listFooter}
       />
     </View>
   );
