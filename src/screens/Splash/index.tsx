@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import { Text, View } from "react-native";
+import { useEffect } from "react";
+import { View } from "react-native";
 import LottieView from "lottie-react-native";
 import { SCREENS } from "../../constants";
 import { useNavigation } from "@react-navigation/native";
 import AppContainer from "../../components/organisms/AppContainer";
+import Styles from "./SplashStyles";
 
 const Splash = () => {
   const navigation = useNavigation();
@@ -14,15 +15,14 @@ const Splash = () => {
   }, []);
   return (
     <AppContainer>
-      <LottieView
-        source={require("../../assets/animations/splashAnimation.json")}
-        autoPlay
-        loop
-        style={{
-          height: 100,
-          width : 100
-        }}
-      />
+      <View style={Styles.container}>
+        <LottieView
+          source={require("../../assets/animations/splashAnimation.json")}
+          autoPlay
+          loop
+          style={Styles.lottieAnimation}
+        />
+      </View>
     </AppContainer>
   );
 };

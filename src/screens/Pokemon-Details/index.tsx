@@ -49,23 +49,24 @@ const PokemonDetails = ({ route }) => {
     <AppContainer>
       <Header showBackButton={true} title={name?.toUpperCase()} />
 
-      <ScrollViewWrapper
-      >
+      <ScrollViewWrapper>
         <BackgroundCard
           background={backgroundImage}
           profile={backgroundImage}
         />
 
-        <PokemonDetailsCard
-          abilities={abilities}
-          species={species}
-          names={names}
-          genus={genus}
-          baseExperience={pokemon?.base_experience}
-          types={types}
-          weight={pokemon?.weight}
-          stats={stats}
-        />
+        {pokemon && (
+          <PokemonDetailsCard
+            abilities={abilities}
+            species={species}
+            names={names}
+            genus={genus}
+            baseExperience={pokemon?.base_experience}
+            types={types}
+            weight={pokemon?.weight}
+            stats={stats}
+          />
+        )}
       </ScrollViewWrapper>
     </AppContainer>
   );
