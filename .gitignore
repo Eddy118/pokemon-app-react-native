@@ -252,3 +252,6 @@ gradle-app.setting
 .nfs*
 
 Pods/
+
+
+sentry.properties

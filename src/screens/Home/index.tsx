@@ -27,22 +27,20 @@ const HomeScreen = () => {
   }, [page]);
 
   return (
-    <>
-      <AppContainer>
-        <View style={Styles.container}>
-          <Header title="Gotta Catch 'Em All" />
+    <AppContainer>
+      <View style={Styles.container}>
+        <Header title="Gotta Catch 'Em All" />
 
-          {pokemons?.length ? (
-            <CustomListingWrapper
-              data={pokemons}
-              onReachEnd={() => setPage(page + 1)}
-            />
-          ) : (
-            <SkelonPlaceholder />
-          )}
-        </View>
-      </AppContainer>
-    </>
+        {pokemons?.length ? (
+          <CustomListingWrapper
+            data={pokemons}
+            onReachEnd={() => setPage(page + 1)}
+          />
+        ) : (
+          <SkelonPlaceholder />
+        )}
+      </View>
+    </AppContainer>
   );
 };
 
