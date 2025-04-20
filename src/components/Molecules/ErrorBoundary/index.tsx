@@ -1,5 +1,6 @@
 import * as Sentry from "@sentry/react-native";
 import React from "react";
+import ErrorFallback from "../ErrorFallback";
 
 type ErrorBoundaryProps = {
   children: React.ReactNode;
@@ -7,7 +8,9 @@ type ErrorBoundaryProps = {
 
 const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children }) => {
   return (
-    <Sentry.ErrorBoundary fallback={<></>}>{children}</Sentry.ErrorBoundary>
+    <Sentry.ErrorBoundary fallback={<ErrorFallback />}>
+      {children}
+    </Sentry.ErrorBoundary>
   );
 };
 

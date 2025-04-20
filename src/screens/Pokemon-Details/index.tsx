@@ -1,8 +1,10 @@
 import AppContainer from "../../components/organisms/AppContainer";
 import Header from "../../components/Molecules/Header";
 import { useEffect, useState } from "react";
-import { getPokemonDetails } from "../../services/pokemonService";
-import apiClient from "../../api/apiClient";
+import {
+  getPokemonDetails,
+  getSelectedPokemonDetails,
+} from "../../services/pokemonService";
 import PokemonDetailsCard from "../../components/organisms/PokemonDetailsCard";
 import BackgroundCard from "../../components/Molecules/BackgroundCard";
 import ScrollViewWrapper from "../../components/organisms/ScrollViewWrapper";
@@ -24,8 +26,7 @@ const PokemonDetails = ({ route }) => {
   }, []);
 
   const fetchSpeciesDetails = async (url: string) => {
-    const speciesUrl = url?.split("v2")[1];
-    const { data } = await apiClient.get(speciesUrl);
+    const data = await getSelectedPokemonDetails(url);
     setSpecies(data);
   };
   useEffect(() => {

@@ -4,6 +4,7 @@ import HomeScreen from "../screens/Home";
 import { SCREENS } from "../constants";
 import Splash from "../screens/Splash";
 import PokemonDetails from "../screens/Pokemon-Details";
+import Toast from "react-native-toast-message";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ const MainNavigation = () => {
           component={PokemonDetails}
         />
       </Stack.Navigator>
+      <Toast />
     </NavigationContainer>
   );
 };
