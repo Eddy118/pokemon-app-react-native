@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react-native";
 import HomeScreen from "../src/screens/Home";
 import { Provider } from "react-redux";
 import { store } from "../src/store/store";
+import { NavigationContainer } from "@react-navigation/native";
 
 describe("Pokemon Listing API", () => {
   it("fetche listing Api", async () => {
@@ -15,14 +16,15 @@ describe("Pokemon Listing API", () => {
   });
 });
 
-describe("Test Screen rendering", () => {
-  it("Screem Rendering", async () => {
+describe("Home Screen rendering", () => {
+  it("Home Screen Rendering", async () => {
     render(
       <Provider store={store}>
-        <HomeScreen />
+        <NavigationContainer>
+          <HomeScreen />
+        </NavigationContainer>
       </Provider>
     );
     expect(screen.toJSON()).not.toBeNull();
-
   });
 });
