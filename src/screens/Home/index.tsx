@@ -5,7 +5,6 @@ import CustomListingWrapper from "../../components/organisms/Listing";
 import { useEffect, useState } from "react";
 import { getPokemonListing } from "../../services/pokemonService";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { AppDispatch } from "../../store/store";
 import { updatePokemonList } from "../../store/pokemon.slice";
 import Styles from "./HomeStyles";
 import { pageSize } from "../../constants/environment";
@@ -14,7 +13,7 @@ import SkelonPlaceholder from "../../components/Molecules/listSkeleton";
 const HomeScreen = () => {
   const [page, setPage] = useState<number>(1);
   const pokemons = useAppSelector((state) => state.pokemon.pokemoms);
-  const dispatch = useAppDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
   const fetchPokemonListing = async () => {
     const results = await getPokemonListing({ page, pageSize });
