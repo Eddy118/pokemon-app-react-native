@@ -22,7 +22,7 @@ const CustomListingWrapper = ({
 }: CustomListingWrapperProps) => {
   const renderLisitng = useCallback(({ ...props }: RednerListingProps) => {
     return (
-      <View style={Styles.listContentStyles}>
+      <View testID="pokemon-item" style={Styles.listContentStyles}>
         <PokemonListingCard {...props} />
       </View>
     );
@@ -30,6 +30,7 @@ const CustomListingWrapper = ({
   return (
     <View style={Styles.container}>
       <FlashList
+        testID="Pokemon-list"
         keyExtractor={(item) => item.name}
         data={data}
         renderItem={({ item }) => renderLisitng(item)}

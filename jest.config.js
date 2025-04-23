@@ -13,6 +13,7 @@ module.exports = {
         '|@react-native-masked-view/masked-view' + 
         '|react-native-linear-gradient' + 
         '|react-redux' +
+        '|react-native-chart-kit' +
         ')/)',
     ],
 };
