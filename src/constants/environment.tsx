@@ -1,4 +1,5 @@
-const baseURl = "https://pokeapi.co/api/v2/";
+import { API_URL } from '@env'
+const baseURl = API_URL;
 
 const pageSize = 30;
 
