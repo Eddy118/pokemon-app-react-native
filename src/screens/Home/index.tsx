@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { updatePokemonList } from "../../store/pokemon.slice";
 import Styles from "./HomeStyles";
 import { pageSize } from "../../constants/environment";
-import SkelonPlaceholder from "../../components/Molecules/listSkeleton";
+import SkeletonPlaceholder from "../../components/Molecules/listSkeleton";
 
 const HomeScreen = () => {
   const [page, setPage] = useState<number>(1);
@@ -36,7 +36,7 @@ const HomeScreen = () => {
             onReachEnd={() => setPage(page + 1)}
           />
         ) : (
-          <SkelonPlaceholder />
+          <SkeletonPlaceholder />
         )}
       </View>
     </AppContainer>
