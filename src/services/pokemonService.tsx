@@ -20,7 +20,7 @@ export const getPokemonListing = async ({
 
     if (results?.length === 0) return results;
 
-    const resultsList = await Promise.all(
+    return await Promise.all(
       results.map(async (pokemon: PokemonType) => {
         const pokemonDetails = await apiClient.get(`pokemon/${pokemon.name}`);
         const { data } = pokemonDetails as any;
@@ -32,7 +32,7 @@ export const getPokemonListing = async ({
         };
       })
     );
-    return resultsList;
+
   } catch (err: any) {
     const errorMsg = err?.message ?? genericError;
     showErrorToast({ message: errorMsg });
