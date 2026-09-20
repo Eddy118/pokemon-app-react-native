@@ -11,8 +11,8 @@ const HeaderStyles = StyleSheet.create({
     width: wp(100),
     alignSelf: "center",
     borderRadius: wp(1),
-    borderWidth: 0.5,
-    borderColor: "#e6e6ea",
+    borderBottomWidth: 0.5,
+    borderBottomColor: "#e6e6ea",
   },
   title: {
     fontFamily: fonts.Lato.bold,
