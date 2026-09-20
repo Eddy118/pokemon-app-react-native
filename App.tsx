@@ -1,29 +1,34 @@
-import MainNavigation from "./src/navigation";
-import { Provider } from "react-redux";
-import { store } from "./src/store/store";
+import { LogBox, StatusBar, useColorScheme } from 'react-native';
+import { Provider } from 'react-redux';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import * as Sentry from '@sentry/react-native';
 
-import { LogBox } from "react-native";
-import * as Sentry from "@sentry/react-native";
-import ErrorBoundary from "./src/components/Molecules/ErrorBoundary";
+import MainNavigation from './src/navigation';
+import { store } from './src/store/store';
+import ErrorBoundary from './src/components/Molecules/ErrorBoundary';
 
 Sentry.init({
-  dsn: process.env.Sentry_Key,
-
-  // Configure Session Replay
-  replaysSessionSampleRate: 0.1,
-  replaysOnErrorSampleRate: 1,
-  integrations: [Sentry.mobileReplayIntegration()],
+    dsn: process.env.Sentry_Key,
+    replaysSessionSampleRate: 0.1,
+    replaysOnErrorSampleRate: 1,
+    integrations: [Sentry.mobileReplayIntegration()],
 });
-LogBox.ignoreLogs(["Warning: ..."]); // Ignore log notification by message
+
 LogBox.ignoreAllLogs();
 
 const App = () => {
-  return (
-    <ErrorBoundary>
-      <Provider store={store}>
-        <MainNavigation />
-      </Provider>
-    </ErrorBoundary>
-  );
+    const isDarkMode = useColorScheme() === 'dark';
+
+    return (
+        <ErrorBoundary>
+            <Provider store={store}>
+                <SafeAreaProvider>
+                    <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+                    <MainNavigation />
+                </SafeAreaProvider>
+            </Provider>
+        </ErrorBoundary>
+    );
 };
+
 export default Sentry.wrap(App);
