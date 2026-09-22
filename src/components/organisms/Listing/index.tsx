@@ -20,7 +20,7 @@ const CustomListingWrapper = ({
   data,
   onReachEnd,
 }: CustomListingWrapperProps) => {
-  const renderLisitng = useCallback(({ ...props }: RednerListingProps) => {
+  const renderListing = useCallback(({ ...props }: RednerListingProps) => {
     return (
       <View testID="pokemon-item" style={Styles.listContentStyles}>
         <PokemonListingCard {...props} />
@@ -33,7 +33,7 @@ const CustomListingWrapper = ({
         testID="Pokemon-list"
         keyExtractor={(item) => item.name}
         data={data}
-        renderItem={({ item }) => renderLisitng(item)}
+        renderItem={({ item }) => renderListing(item)}
         estimatedItemSize={200}
         style={Styles.listStyles}
         ItemSeparatorComponent={() => <View style={Styles.itemSeperator} />}
