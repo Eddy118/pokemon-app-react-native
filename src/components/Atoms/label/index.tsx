@@ -1,8 +1,8 @@
-import { Text, View, StyleProp } from "react-native";
+import {Text, View, StyleProp, TextStyle} from "react-native";
 
 type LabelProps = {
   title: string;
-  styles?: StyleProp<any>;
+  styles?: StyleProp<TextStyle>;
 };
 
 const Label = ({ title, styles }: LabelProps) => {

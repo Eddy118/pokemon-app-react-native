@@ -1,4 +1,4 @@
-import { Image, TouchableOpacity, View } from "react-native";
+import { Image, View, Pressable } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 import Label from "../../Atoms/label";
 import Tag from "../../Atoms/tag";
@@ -18,7 +18,7 @@ type PokemonListingCardProps = {
 const PokemonListingCard = ({ ...props }: PokemonListingCardProps) => {
   const navigation = useNavigation();
 
-  const naviagteToDetails = (name: string) => {
+  const navigateToDetails = (name: string) => {
     navigation.navigate(SCREENS.pokemondetails, {
       name,
     });
@@ -28,7 +28,7 @@ const PokemonListingCard = ({ ...props }: PokemonListingCardProps) => {
     <View style={Styles.container}>
       <Shadow style={Styles.cardShadow}>
 
-        <Image style={Styles.pokemonImage} source={{ uri: props.imageUrl }} />
+        <Pressable onPress={() => navigateToDetails(props?.name)}><Image   style={Styles.pokemonImage} source={{ uri: props.imageUrl }} /></Pressable>
         <View style={{ flexDirection: "row" }}>
           <View style={{ backgroundColor: colors.cardBackground }}>
             <Label
@@ -40,19 +40,6 @@ const PokemonListingCard = ({ ...props }: PokemonListingCardProps) => {
                 return <Tag key={ability} title={ability} />;
               })}
             </View>
-          </View>
-          <View style={Styles.detailsBtn}>
-            <TouchableOpacity
-              style={Styles.detailsBtnContainer}
-              onPress={() => naviagteToDetails(props?.name)}
-            >
-              <Image
-                source={require("../../../assets/images/right-arrow.png")}
-                tintColor={colors.white}
-                resizeMode="contain"
-                style={Styles.arrowStyle}
-              />
-            </TouchableOpacity>
           </View>
         </View>
       </Shadow>
