@@ -52,7 +52,7 @@ const PokemonDetailsCard = ({
 
       {stats && (
         <View style={Styles.graphContainer}>
-          <Label title="Stats: " styles={Styles.statsLabel} />
+          <Label title="Stats:" styles={Styles.statsLabel} />
           <StatsChart stats={stats} />
         </View>
       )}
